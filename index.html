@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cheat Sheet - Linguagens de Programação</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: linear-gradient(
+          135deg,
+          #0c0c0c 0%,
+          #1a0b2e 50%,
+          #16213e 100%
+        );
+        font-family: 'Arial', sans-serif;
+        color: white;
+        overflow-x: auto;
+        min-height: 100vh;
+      }
+
+      .container {
+        padding: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .main-title {
+        font-size: 4rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 8px;
+        color: #ff1b8d;
+        text-shadow: 0 0 10px #ff1b8d, 0 0 20px #ff1b8d, 0 0 40px #ff1b8d,
+          0 0 80px #ff1b8d;
+        margin-bottom: 1rem;
+        animation: pulse 2s infinite;
+      }
+
+      .subtitle {
+        font-size: 1.5rem;
+        color: #00d4ff;
+        text-shadow: 0 0 10px #00d4ff;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      .languages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .language-card {
+        background: rgba(20, 20, 20, 0.8);
+        border-radius: 15px;
+        padding: 2rem;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .language-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 15px;
+        padding: 2px;
+        background: linear-gradient(
+          45deg,
+          transparent,
+          var(--glow-color),
+          transparent
+        );
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask-composite: exclude;
+        -webkit-mask-composite: xor;
+      }
+
+      .language-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .python {
+        --glow-color: #00d4ff;
+      }
+      .javascript {
+        --glow-color: #ffd700;
+      }
+      .java {
+        --glow-color: #ff4444;
+      }
+      .cpp {
+        --glow-color: #00d4ff;
+      }
+      .csharp {
+        --glow-color: #8a2be2;
+      }
+      .php {
+        --glow-color: #ff1b8d;
+      }
+
+      .language-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .language-icon {
+        width: 60px;
+        height: 60px;
+        margin-right: 1rem;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: 0 0 10px currentColor;
+      }
+
+      .python .language-icon {
+        background: #00d4ff;
+        color: #003d4f;
+      }
+      .javascript .language-icon {
+        background: #ffd700;
+        color: #4d4000;
+      }
+      .java .language-icon {
+        background: #ff4444;
+        color: #4d0000;
+      }
+      .cpp .language-icon {
+        background: #00d4ff;
+        color: #003d4f;
+      }
+      .csharp .language-icon {
+        background: #8a2be2;
+        color: #2a0835;
+      }
+      .php .language-icon {
+        background: #ff1b8d;
+        color: #4d0526;
+      }
+
+      .language-name {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-shadow: 0 0 15px currentColor;
+      }
+
+      .python .language-name {
+        color: #00d4ff;
+      }
+      .javascript .language-name {
+        color: #ffd700;
+      }
+      .java .language-name {
+        color: #ff4444;
+      }
+      .cpp .language-name {
+        color: #00d4ff;
+      }
+      .csharp .language-name {
+        color: #8a2be2;
+      }
+      .php .language-name {
+        color: #ff1b8d;
+      }
+
+      .language-description {
+        color: #cccccc;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+      }
+
+      .features-section {
+        margin-bottom: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+        color: #ffffff;
+        margin-bottom: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+      }
+
+      .features-list,
+      .performance-list,
+      .use-cases-list {
+        list-style: none;
+      }
+
+      .features-list li,
+      .performance-list li,
+      .use-cases-list li {
+        padding: 0.3rem 0;
+        color: #b0b0b0;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      .features-list li::before,
+      .performance-list li::before,
+      .use-cases-list li::before {
+        content: '▶';
+        position: absolute;
+        left: 0;
+        color: var(--glow-color);
+        text-shadow: 0 0 5px currentColor;
+      }
+
+      .performance-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .stat {
+        background: rgba(40, 40, 40, 0.6);
+        padding: 0.8rem;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: #888;
+        text-transform: uppercase;
+      }
+
+      .stat-value {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--glow-color);
+        text-shadow: 0 0 5px currentColor;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.8;
+        }
+      }
+
+      .difficulty-meter {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+      }
+
+      .difficulty-label {
+        margin-right: 1rem;
+        font-size: 0.9rem;
+        color: #888;
+      }
+
+      .difficulty-bar {
+        display: flex;
+        gap: 3px;
+      }
+
+      .difficulty-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .difficulty-dot.active {
+        background: var(--glow-color);
+        box-shadow: 0 0 5px currentColor;
+      }
+
+      @media (max-width: 768px) {
+        .main-title {
+          font-size: 2.5rem;
+          letter-spacing: 4px;
+        }
+
+        .languages-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .language-card {
+          padding: 1.5rem;
+        }
+
+        .performance-stats {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="main-title">CHEAT SHEET</h1>
+        <p class="subtitle">Linguagens de Programação - Guia Completo</p>
+      </div>
+
+      <div class="languages-grid">
+        <!-- Python -->
+        <div class="language-card python">
+          <div class="language-header">
+            <div class="language-icon">🐍</div>
+            <div>
+              <h2 class="language-name">Python</h2>
+              <p style="color: #00d4ff; font-weight: bold">Simples e Legível</p>
+            </div>
+          </div>
+
+          <p class="language-description">
+            Linguagem interpretada, dinâmica e de alto nível. Conhecida pela
+            sintaxe limpa e legibilidade excepcional.
+          </p>
+
+          <div class="features-section">
+            <h3 class="section-title">Pontos Fortes</h3>
+            <ul class="features-list">
+              <li>Sintaxe simples e intuitiva</li>
+              <li>Vasta biblioteca padrão</li>
+              <li>Excelente para Data Science/AI</li>
+              <li>Comunidade ativa e grande</li>
+              <li>Multiplataforma</li>
+              <li>Prototipagem rápida</li>
+            </ul>
+          </div>
+
+          <div class="features-section">
+            <h3 class="section-title">Casos de Uso</h3>
+            <ul class="use-cases-list">
+              <li>Machine Learning & IA</li>
+              <li>Desenvolvimento Web (Django/Flask)</li>
+              <li>Automação e Scripts</li>
+              <li>Análise de Dados</li>
+              <li>APIs REST</li>
+            </ul>
+          </div>
+
+          <div class="performance-stats">
+            <div class="stat">
+              <div class="stat-label">Velocidade</div>
+              <div class="stat-value">Média</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Curva Aprendizado</div>
+              <div class="stat-value">Baixa</div>
+            </div>
+          </div>
+
+          <div class="difficulty-meter">
+            <span class="difficulty-label">Dificuldade:</span>
+            <div class="difficulty-bar">
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot"></div>
+              <div class="difficulty-dot"></div>
+              <div class="difficulty-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="language-card javascript">
+          <div class="language-header">
+            <div class="language-icon">JS</div>
+            <div>
+              <h2 class="language-name">JavaScript</h2>
+              <p style="color: #ffd700; font-weight: bold">
+                Desenvolvimento Web
+              </p>
+            </div>
+          </div>
+
+          <p class="language-description">
+            Linguagem dinâmica essencial para web. Executa no browser e servidor
+            (Node.js), oferecendo versatilidade total.
+          </p>
+
+          <div class="features-section">
+            <h3 class="section-title">Pontos Fortes</h3>
+            <ul class="features-list">
+              <li>Linguagem universal da web</li>
+              <li>Execução client-side e server-side</li>
+              <li>Event-driven e assíncrono</li>
+              <li>Ecossistema NPM gigante</li>
+              <li>Frameworks modernos (React, Vue, Angular)</li>
+              <li>Desenvolvimento rápido</li>
+            </ul>
+          </div>
+
+          <div class="features-section">
+            <h3 class="section-title">Casos de Uso</h3>
+            <ul class="use-cases-list">
+              <li>Frontend Web (SPAs)</li>
+              <li>Backend (Node.js)</li>
+              <li>Apps Mobile (React Native)</li>
+              <li>Desktop (Electron)</li>
+              <li>APIs RESTful</li>
+            </ul>
+          </div>
+
+          <div class="performance-stats">
+            <div class="stat">
+              <div class="stat-label">Velocidade</div>
+              <div class="stat-value">Boa</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Versatilidade</div>
+              <div class="stat-value">Alta</div>
+            </div>
+          </div>
+
+          <div class="difficulty-meter">
+            <span class="difficulty-label">Dificuldade:</span>
+            <div class="difficulty-bar">
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot"></div>
+              <div class="difficulty-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Java -->
+        <div class="language-card java">
+          <div class="language-header">
+            <div class="language-icon">☕</div>
+            <div>
+              <h2 class="language-name">Java</h2>
+              <p style="color: #ff4444; font-weight: bold">Multiplataforma</p>
+            </div>
+          </div>
+
+          <p class="language-description">
+            Linguagem robusta, orientada a objetos, com forte tipagem. "Write
+            once, run anywhere" através da JVM.
+          </p>
+
+          <div class="features-section">
+            <h3 class="section-title">Pontos Fortes</h3>
+            <ul class="features-list">
+              <li>Portabilidade (JVM)</li>
+              <li>Orientação a objetos sólida</li>
+              <li>Gerenciamento automático de memória</li>
+              <li>Thread-safe e concorrência</li>
+              <li>Ecossistema enterprise maduro</li>
+              <li>Performance estável</li>
+            </ul>
+          </div>
+
+          <div class="features-section">
+            <h3 class="section-title">Casos de Uso</h3>
+            <ul class="use-cases-list">
+              <li>Aplicações Enterprise</li>
+              <li>Sistemas Distribuídos</li>
+              <li>Apps Android</li>
+              <li>Web Services</li>
+              <li>Big Data (Hadoop, Spark)</li>
+            </ul>
+          </div>
+
+          <div class="performance-stats">
+            <div class="stat">
+              <div class="stat-label">Velocidade</div>
+              <div class="stat-value">Alta</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Escalabilidade</div>
+              <div class="stat-value">Excelente</div>
+            </div>
+          </div>
+
+          <div class="difficulty-meter">
+            <span class="difficulty-label">Dificuldade:</span>
+            <div class="difficulty-bar">
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C++ -->
+        <div class="language-card cpp">
+          <div class="language-header">
+            <div class="language-icon">C++</div>
+            <div>
+              <h2 class="language-name">C++</h2>
+              <p style="color: #00d4ff; font-weight: bold">
+                Desempenho Elevado
+              </p>
+            </div>
+          </div>
+
+          <p class="language-description">
+            Linguagem compilada de baixo nível com controle direto da memória.
+            Oferece máxima performance e eficiência.
+          </p>
+
+          <div class="features-section">
+            <h3 class="section-title">Pontos Fortes</h3>
+            <ul class="features-list">
+              <li>Performance extremamente alta</li>
+              <li>Controle total da memória</li>
+              <li>Programação de sistemas</li>
+              <li>OOP + programação procedural</li>
+              <li>Templates e metaprogramação</li>
+              <li>Ampla compatibilidade</li>
+            </ul>
+          </div>
+
+          <div class="features-section">
+            <h3 class="section-title">Casos de Uso</h3>
+            <ul class="use-cases-list">
+              <li>Sistemas Operacionais</li>
+              <li>Games de Alta Performance</li>
+              <li>Sistemas Embarcados</li>
+              <li>Aplicações Real-time</li>
+              <li>Engines e Drivers</li>
+            </ul>
+          </div>
+
+          <div class="performance-stats">
+            <div class="stat">
+              <div class="stat-label">Velocidade</div>
+              <div class="stat-value">Máxima</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Controle</div>
+              <div class="stat-value">Total</div>
+            </div>
+          </div>
+
+          <div class="difficulty-meter">
+            <span class="difficulty-label">Dificuldade:</span>
+            <div class="difficulty-bar">
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C# -->
+        <div class="language-card csharp">
+          <div class="language-header">
+            <div class="language-icon">C#</div>
+            <div>
+              <h2 class="language-name">C#</h2>
+              <p style="color: #8a2be2; font-weight: bold">Desktops e Jogos</p>
+            </div>
+          </div>
+
+          <p class="language-description">
+            Linguagem moderna da Microsoft com forte tipagem, orientada a
+            objetos. Executa no .NET Framework/Core.
+          </p>
+
+          <div class="features-section">
+            <h3 class="section-title">Pontos Fortes</h3>
+            <ul class="features-list">
+              <li>Sintaxe limpa e moderna</li>
+              <li>Garbage Collection automático</li>
+              <li>Integração com ecossistema Microsoft</li>
+              <li>Cross-platform (.NET Core)</li>
+              <li>Forte suporte para async/await</li>
+              <li>Ferramentas de desenvolvimento robustas</li>
+            </ul>
+          </div>
+
+          <div class="features-section">
+            <h3 class="section-title">Casos de Uso</h3>
+            <ul class="use-cases-list">
+              <li>Aplicações Desktop (WPF)</li>
+              <li>Desenvolvimento de Jogos (Unity)</li>
+              <li>Web APIs (ASP.NET)</li>
+              <li>Aplicações Enterprise</li>
+              <li>Xamarin (Mobile)</li>
+            </ul>
+          </div>
+
+          <div class="performance-stats">
+            <div class="stat">
+              <div class="stat-label">Velocidade</div>
+              <div class="stat-value">Alta</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Produtividade</div>
+              <div class="stat-value">Excelente</div>
+            </div>
+          </div>
+
+          <div class="difficulty-meter">
+            <span class="difficulty-label">Dificuldade:</span>
+            <div class="difficulty-bar">
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot"></div>
+              <div class="difficulty-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHP -->
+        <div class="language-card php">
+          <div class="language-header">
+            <div class="language-icon">PHP</div>
+            <div>
+              <h2 class="language-name">PHP</h2>
+              <p style="color: #ff1b8d; font-weight: bold">
+                Desenvolvimento de Scripts
+              </p>
+            </div>
+          </div>
+
+          <p class="language-description">
+            Linguagem server-side especializada em desenvolvimento web. Fácil
+            integração com bancos de dados e HTML.
+          </p>
+
+          <div class="features-section">
+            <h3 class="section-title">Pontos Fortes</h3>
+            <ul class="features-list">
+              <li>Especializado para web</li>
+              <li>Configuração simples</li>
+              <li>Integração nativa com HTML</li>
+              <li>Suporte extenso a bancos de dados</li>
+              <li>Hospedagem barata e acessível</li>
+              <li>Curva de aprendizado suave</li>
+            </ul>
+          </div>
+
+          <div class="features-section">
+            <h3 class="section-title">Casos de Uso</h3>
+            <ul class="use-cases-list">
+              <li>Websites Dinâmicos</li>
+              <li>Sistemas de Gerenciamento (CMS)</li>
+              <li>E-commerce</li>
+              <li>APIs Web</li>
+              <li>Scripts de Automação</li>
+            </ul>
+          </div>
+
+          <div class="performance-stats">
+            <div class="stat">
+              <div class="stat-label">Velocidade</div>
+              <div class="stat-value">Boa</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Facilidade</div>
+              <div class="stat-value">Alta</div>
+            </div>
+          </div>
+
+          <div class="difficulty-meter">
+            <span class="difficulty-label">Dificuldade:</span>
+            <div class="difficulty-bar">
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot"></div>
+              <div class="difficulty-dot"></div>
+              <div class="difficulty-dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
