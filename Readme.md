@@ -11,7 +11,7 @@ Um guia visual interativo das principais linguagens de programação com design 
 
 Este cheat sheet apresenta as 6 linguagens de programação mais utilizadas no mercado com:
 
-- ✨ **Design visual atrativo** com efeitos neon
+- ✨ **Design visual atrativo** com efeitos neoon
 - 📊 **Comparações técnicas** (performance, dificuldade, casos de uso)
 - 🎯 **Informações práticas** para escolha da linguagem ideal
 - 📱 **Layout responsivo** para todos os dispositivos
