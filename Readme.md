@@ -32,7 +32,7 @@ Este cheat sheet apresenta as 6 linguagens de programação mais utilizadas no m
 
 ### Opção 1: GitHub Pages
 
-Acesse diretamente: [Ver Demo](https://seuusuario.github.io/programming-languages-cheatsheet)
+Acesse diretamente: [Ver Demo](https://genildocs.github.io/cheat-sheet-linguagens/)
 
 ### Opção 2: Executar Localmente
 
