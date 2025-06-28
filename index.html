@@ -115,6 +115,12 @@
       .php {
         --glow-color: #ff1b8d;
       }
+      .rust {
+        --glow-color: #ff8c00;
+      }
+      .c {
+        --glow-color: #00ffff;
+      }
 
       .language-header {
         display: flex;
@@ -159,6 +165,14 @@
         background: #ff1b8d;
         color: #4d0526;
       }
+      .rust .language-icon {
+        background: #ff8c00;
+        color: #4d2900;
+      }
+      .c .language-icon {
+        background: #00ffff;
+        color: #003d4f;
+      }
 
       .language-name {
         font-size: 2.5rem;
@@ -184,6 +198,12 @@
       }
       .php .language-name {
         color: #ff1b8d;
+      }
+      .rust .language-name {
+        color: #ff8c00;
+      }
+      .c .language-name {
+        color: #00ffff;
       }
 
       .language-description {
@@ -322,7 +342,7 @@
     <div class="container">
       <div class="header">
         <h1 class="main-title">CHEAT SHEET</h1>
-        <p class="subtitle">Linguagens de Programação - Guia Completo</p>
+        <p class="subtitle">Linguagens de Programação - Guia Completo 2025</p>
       </div>
 
       <div class="languages-grid">
@@ -642,7 +662,7 @@
             <div>
               <h2 class="language-name">PHP</h2>
               <p style="color: #ff1b8d; font-weight: bold">
-                Desenvolvimento de Scripts
+                Desenvolvimento Web
               </p>
             </div>
           </div>
@@ -694,6 +714,130 @@
               <div class="difficulty-dot"></div>
               <div class="difficulty-dot"></div>
               <div class="difficulty-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rust -->
+        <div class="language-card rust">
+          <div class="language-header">
+            <div class="language-icon">🦀</div>
+            <div>
+              <h2 class="language-name">Rust</h2>
+              <p style="color: #ff8c00; font-weight: bold">
+                Segurança e Performance
+              </p>
+            </div>
+          </div>
+
+          <p class="language-description">
+            Linguagem systems programming que garante segurança de memória sem garbage collector. Performance de C++ com segurança de linguagens modernas.
+          </p>
+
+          <div class="features-section">
+            <h3 class="section-title">Pontos Fortes</h3>
+            <ul class="features-list">
+              <li>Zero-cost abstractions</li>
+              <li>Segurança de memória garantida</li>
+              <li>Concorrência sem data races</li>
+              <li>Performance equivalente a C/C++</li>
+              <li>Cargo package manager excelente</li>
+              <li>Comunidade ativa e crescente</li>
+            </ul>
+          </div>
+
+          <div class="features-section">
+            <h3 class="section-title">Casos de Uso</h3>
+            <ul class="use-cases-list">
+              <li>Sistemas Operacionais</li>
+              <li>Blockchain e Criptomoedas</li>
+              <li>Serviços Web High-Performance</li>
+              <li>CLI Tools e Utilitários</li>
+              <li>WebAssembly Applications</li>
+            </ul>
+          </div>
+
+          <div class="performance-stats">
+            <div class="stat">
+              <div class="stat-label">Velocidade</div>
+              <div class="stat-value">Máxima</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Segurança</div>
+              <div class="stat-value">Máxima</div>
+            </div>
+          </div>
+
+          <div class="difficulty-meter">
+            <span class="difficulty-label">Dificuldade:</span>
+            <div class="difficulty-bar">
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- C -->
+        <div class="language-card c">
+          <div class="language-header">
+            <div class="language-icon">C</div>
+            <div>
+              <h2 class="language-name">C</h2>
+              <p style="color: #00ffff; font-weight: bold">
+                Fundação Universal
+              </p>
+            </div>
+          </div>
+
+          <p class="language-description">
+            A linguagem que está na base de tudo. Minimalista, eficiente e com controle total do hardware. Mãe de quase todas as linguagens modernas.
+          </p>
+
+          <div class="features-section">
+            <h3 class="section-title">Pontos Fortes</h3>
+            <ul class="features-list">
+              <li>Performance máxima possível</li>
+              <li>Controle total do hardware</li>
+              <li>Footprint mínimo de memória</li>
+              <li>Base para aprender outras linguagens</li>
+              <li>Portabilidade universal</li>
+              <li>Estabilidade de décadas</li>
+            </ul>
+          </div>
+
+          <div class="features-section">
+            <h3 class="section-title">Casos de Uso</h3>
+            <ul class="use-cases-list">
+              <li>Sistemas Operacionais</li>
+              <li>Microcontroladores e IoT</li>
+              <li>Drivers e Firmware</li>
+              <li>Sistemas Embarcados</li>
+              <li>Programação de Baixo Nível</li>
+            </ul>
+          </div>
+
+          <div class="performance-stats">
+            <div class="stat">
+              <div class="stat-label">Velocidade</div>
+              <div class="stat-value">Máxima</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Controle</div>
+              <div class="stat-value">Total</div>
+            </div>
+          </div>
+
+          <div class="difficulty-meter">
+            <span class="difficulty-label">Dificuldade:</span>
+            <div class="difficulty-bar">
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
+              <div class="difficulty-dot active"></div>
             </div>
           </div>
         </div>
