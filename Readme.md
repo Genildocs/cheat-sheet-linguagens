@@ -19,14 +19,16 @@ Este cheat sheet apresenta as 6 linguagens de programação mais utilizadas no m
 
 ## 🛠️ Linguagens Incluídas
 
-| Linguagem         | Especialidade       | Dificuldade | Performance |
-| ----------------- | ------------------- | ----------- | ----------- |
-| 🐍 **Python**     | Data Science, IA    | ⭐⭐        | Média       |
-| ⚡ **JavaScript** | Desenvolvimento Web | ⭐⭐⭐      | Boa         |
-| ☕ **Java**       | Enterprise, Android | ⭐⭐⭐⭐    | Alta        |
-| 🚀 **C++**        | Sistemas, Games     | ⭐⭐⭐⭐⭐  | Máxima      |
-| 💜 **C#**         | Desktop, Unity      | ⭐⭐⭐      | Alta        |
-| 🌐 **PHP**        | Web, Scripts        | ⭐⭐        | Boa         |
+| Linguagem         | Especialidade               | Dificuldade | Performance | Status    |
+| ----------------- | --------------------------- | ----------- | ----------- | --------- |
+| 🐍 **Python**     | Data Science, IA            | ⭐⭐        | Média       | Estável   |
+| ⚡ **JavaScript** | Desenvolvimento Web         | ⭐⭐⭐      | Boa         | Evoluindo |
+| ☕ **Java**       | Enterprise, Android         | ⭐⭐⭐⭐    | Alta        | Maduro    |
+| 🚀 **C++**        | Sistemas, Games             | ⭐⭐⭐⭐⭐  | Máxima      | Estável   |
+| 💜 **C#**         | Desktop, Unity              | ⭐⭐⭐      | Alta        | Moderno   |
+| 🌐 **PHP**        | Web, Scripts                | ⭐⭐        | Boa         | Estável   |
+| 🦀 **Rust**       | Sistemas, Blockchain        | ⭐⭐⭐⭐    | Máxima      | 🔥 Hot    |
+| ⚡ **C**          | Fundação, Embarcados        | ⭐⭐⭐⭐⭐  | Máxima      | Clássico  |
 
 ## 🚀 Como Usar
 
